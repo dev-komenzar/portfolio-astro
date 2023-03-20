@@ -14,9 +14,7 @@
 		"typescriptreact" // Enable .tsx
 	],
 	"editor.formatOnSave": true,
-	"prettier.documentSelectors": [
-		"**/*.astro"
-	],
+	"prettier.documentSelectors": ["**/*.astro"],
 	"[astro]": {
 		"editor.defaultFormatter": "astro-build.astro-vscode"
 	},

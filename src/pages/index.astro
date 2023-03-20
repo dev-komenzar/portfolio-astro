@@ -1,15 +1,114 @@
 ---
+import Deck from '../components/deck'
+import Header from '../components/header.astro'
+import Intro from '../components/intro.astro'
 ---
 
-<html lang="en">
+<html lang='ja'>
 	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
+		<meta charset='utf-8' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<meta name='viewport' content='width=device-width' />
+		<meta name='generator' content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body ontouchstart=''>
+		<Header />
+		<main>
+			<article class='container'>
+				<section class='feature'>
+					<Intro />
+				</section>
+				<section class='full deck-section'>
+					<Deck client:visible />
+				</section>
+			</article>
+		</main>
 	</body>
 </html>
+
+<style lang='scss' is:global>
+	@mixin cjk {
+		// Chinese-Japanese-Koreanできれいに改行する
+		word-break: keep-all;
+		overflow-wrap: anywhere;
+	}
+
+	html {
+		// width: 100vw;
+	}
+
+	body {
+		margin: 0;
+		font-family: 'TsukuGoPr5-M', YuGothic, -apple-system, BlinkMacSystemFont,
+			'Segoe UI', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+			'Segoe UI Symbol';
+
+		// width: 100%;
+		@include cjk;
+	}
+
+	main {
+		background-image: url('/mesh-gradient.png');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: 'TsuGoPr5R-SyntaxNextLTProL', YuGothic, -apple-system,
+			BlinkMacSystemFont, 'Segoe UI', sans-serif, 'Apple Color Emoji',
+			'Segoe UI Emoji', 'Segoe UI Symbol';
+	}
+
+	p {
+		color: #4a5568;
+	}
+
+	.container {
+		--gap: clamp(1rem, 6vw, 3rem);
+		--full: minmax(var(--gap), 1fr);
+		--content: min(50ch, 100% - var(--gap) * 2);
+		--popout: minmax(0, 2rem);
+		--feature: minmax(0, 5rem);
+
+		display: grid;
+		grid-template-columns:
+			[full-start] var(--full)
+			[feature-start] var(--feature)
+			[popout-start] var(--popout)
+			[content-start] var(--content) [content-end]
+			var(--popout) [popout-end]
+			var(--feature) [feature-end]
+			var(--full) [full-end];
+
+		> * {
+			grid-column: content;
+		}
+
+		.popout {
+			grid-column: popout;
+		}
+
+		.feature {
+			grid-column: feature;
+		}
+
+		.full {
+			grid-column: full;
+		}
+	}
+</style>
+
+<style lang='scss'>
+	.deck-section {
+		width: 100%;
+		height: 90svh;
+		overflow: scroll;
+	}
+</style>

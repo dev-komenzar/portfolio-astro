@@ -1,0 +1,17 @@
+---
+---
+
+<div class='vstack'>
+	<slot />
+</div>
+
+<style lang='scss'>
+	.vstack {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.vstack > *:not(style) ~ *:not(style) {
+		padding-top: 1rem;
+	}
+</style>
