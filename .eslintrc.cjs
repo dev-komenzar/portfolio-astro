@@ -1,10 +1,14 @@
 module.exports = {
 	root: true,
 	env: { browser: true, es2021: true },
-	extends: ['eslint:recommended', 'plugin:astro/recommended',],
+	extends: [
+		'plugin:astro/recommended',
+		'plugin:@typescript-eslint/recommended',
+	],
 	parserOptions: {
-		sourceType: "module",
-		ecmaVersion: "latest"
+		sourceType: 'module',
+		ecmaVersion: 'latest',
+		parser: '@typescript-eslint/parser',
 	},
 	overrides: [
 		{
@@ -55,28 +59,33 @@ module.exports = {
 				// If you are using "prettier/prettier" rule,
 				// you don't need to format inside <script> as it will be formatted as a `.astro` file.
 				'prettier/prettier': 'error',
-				"react/jsx-curly-brace-presence": [
-					"warn",
+				'react/jsx-curly-brace-presence': [
+					'warn',
 					{
-						"props": "never",
-						"children": "never",
-						"propElementValues": "always"
-					}
+						props: 'never',
+						children: 'never',
+						propElementValues: 'always',
+					},
 				],
 			},
 		},
 		{
 			// Define the config for `react-typescript` files
 			files: ['*.tsx'],
-			extends: ['plugin:react/recommended', 'plugin:react/jsx-runtime', 'eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+			extends: ['plugin:react/recommended', 'plugin:react/jsx-runtime'],
 			parser: '@typescript-eslint/parser',
 			plugins: ['@typescript-eslint'],
+			settings: {
+				react: {
+					version: 'detect',
+				},
+			},
 		},
 		{
 			files: ['*.cjs'],
 			env: {
 				node: true,
-			}
-		}
+			},
+		},
 	],
 }
