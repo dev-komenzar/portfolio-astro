@@ -1,0 +1,26 @@
+{
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"eslint.format.enable": false,
+	"eslint.packageManager": "pnpm",
+	"files.insertFinalNewline": true,
+	"npm.packageManager": "pnpm",
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"astro", // Enable .astro
+		"typescript", // Enable .ts
+		"typescriptreact" // Enable .tsx
+	],
+	"editor.formatOnSave": true,
+	"prettier.documentSelectors": [
+		"**/*.astro"
+	],
+	"[astro]": {
+		"editor.defaultFormatter": "astro-build.astro-vscode"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
+}
