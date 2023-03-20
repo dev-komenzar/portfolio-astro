@@ -10,6 +10,16 @@ module.exports = {
 		ecmaVersion: 'latest',
 		parser: '@typescript-eslint/parser',
 	},
+	rules: {
+		'react/jsx-curly-brace-presence': [
+			'warn',
+			{
+				props: 'never',
+				children: 'never',
+				propElementValues: 'always',
+			},
+		],
+	},
 	overrides: [
 		{
 			// Define the configuration for `.astro` file.
@@ -80,6 +90,7 @@ module.exports = {
 					version: 'detect',
 				},
 			},
+			rules: {},
 		},
 		{
 			files: ['*.cjs'],
