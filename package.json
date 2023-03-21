@@ -28,6 +28,7 @@
 		"sharp": "^0.31.3"
 	},
 	"devDependencies": {
+		"@iconify/react": "^4.1.0",
 		"@typescript-eslint/eslint-plugin": "^5.55.0",
 		"@typescript-eslint/parser": "^5.52.0",
 		"eslint": "^8.34.0",
