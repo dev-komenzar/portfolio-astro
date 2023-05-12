@@ -1,34 +1,24 @@
 ---
-import { Picture } from '@astrojs/image/components'
-import Kamogawa from '../assets/kamogawa.jpg'
 ---
 
-<h1>
-	仲間と生きるための<wbr /><span class='orange'>テック</span>
-</h1>
-<p>
-	もう一度社会を作りなおすためには、
-	まず身近な友だちや仲間とともに生きる意識をもつことが重要です。
-</p>
-<p>
-	グローバルに広がるマーケットから 分離されたローカルな輪を重層的に作っていく。
-	鴨川デジタル相談所はそのためのテックを提案します。
-</p>
-<p>
-	そんなことを思いつつ、ITやWebの何でも屋をやっています。
-	なにか困ったら、アイデアがあれば、ぜひご相談ください。
-</p>
-
-<Picture
-	class='pic'
-	src={Kamogawa}
-	alt='夕暮れの鴨川'
-	sizes='(max-width: 30em) 20em, ((min-width:30em) and (max-width: 50em)) 30em, (min-width: 50em) 50em'
-	widths={[400, 800, 1280]}
-	aspectRatio='1280:854'
-	position='center'
-	style='grid-column: feature;'
-/>
+<section>
+	<h1>
+		仲間と生きるための<wbr /><span class='orange'>テック</span>
+	</h1>
+	<p>
+		もう一度社会を作りなおすためには、
+		まず身近な友だちや仲間とともに生きる意識をもつことが重要です。
+	</p>
+	<p>
+		グローバルに広がるマーケットから
+		分離されたローカルな輪を重層的に作っていく。
+		鴨川デジタル相談所はそのためのテックを提案します。
+	</p>
+	<p>
+		そんなことを思いつつ、ITやWebの何でも屋をやっています。
+		なにか困ったら、アイデアがあれば、ぜひご相談ください。
+	</p>
+</section>
 
 <style lang='scss'>
 	h1 {
@@ -47,12 +37,5 @@ import Kamogawa from '../assets/kamogawa.jpg'
 
 	.orange {
 		color: #ed8936;
-	}
-
-	.pic {
-		// grid-column: feature;
-		display: block;
-		max-width: 100%;
-		border-radius: 24px;
 	}
 </style>

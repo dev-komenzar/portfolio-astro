@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@astrojs/image': ^0.15.0
   '@astrojs/react': ^2.0.2
+  '@iconify/react': ^4.1.0
   '@react-spring/web': ^9.6.1
   '@types/react': ^18.0.21
   '@types/react-dom': ^18.0.6
@@ -43,6 +44,7 @@ dependencies:
   sharp: 0.31.3
 
 devDependencies:
+  '@iconify/react': 4.1.0_react@18.2.0
   '@typescript-eslint/eslint-plugin': 5.55.0_mcvs2y73sfmcxqzpjj5lr7a2m4
   '@typescript-eslint/parser': 5.52.0_eslint@8.34.0
   eslint: 8.34.0
@@ -937,6 +939,25 @@ packages:
     resolution:
       {
         integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==,
+      }
+    dev: true
+
+  /@iconify/react/4.1.0_react@18.2.0:
+    resolution:
+      {
+        integrity: sha512-Mf72i3TNNKpKCKxmo7kzqyrUdCgaoljpqtWmtqpqwyxoV4ukhnDsSRNLhf2yBnqGr3cVZsdj/i0FMpXIY0Qk0g==,
+      }
+    peerDependencies:
+      react: '>=16'
+    dependencies:
+      '@iconify/types': 2.0.0
+      react: 18.2.0
+    dev: true
+
+  /@iconify/types/2.0.0:
+    resolution:
+      {
+        integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==,
       }
     dev: true
 
@@ -6106,7 +6127,6 @@ packages:
     engines: { node: '>=0.10.0' }
     dependencies:
       loose-envify: 1.4.0
-    dev: false
 
   /read-pkg-up/7.0.1:
     resolution:

@@ -1,3 +1,4 @@
+import { Icon } from '@iconify/react'
 import { animated, to as interpolate, useSprings } from '@react-spring/web'
 import { useDrag } from '@use-gesture/react'
 import { Children, ReactNode, useState } from 'react'
@@ -9,6 +10,126 @@ function VStack(params: VStackProps) {
 	return (
 		<div className={styles.vstack}>
 			{Children.map(params.children, (child: ReactNode) => child)}
+		</div>
+	)
+}
+
+type LiProps = { children: ReactNode; className?: string }
+function Li(props: LiProps) {
+	return <li className={styles.li}>{props.children}</li>
+}
+
+function Infobox() {
+	return (
+		<Icon
+			className={styles.icon}
+			icon='pixelarticons:info-box'
+			color='#38A169'
+			width='32px'
+		/>
+	)
+}
+function Checkbox() {
+	return (
+		<Icon
+			className={styles.icon}
+			icon='pixelarticons:checkbox'
+			color='#38A169'
+			width='32px'
+		/>
+	)
+}
+
+function WhatIsKamodigi() {
+	return (
+		<div className={styles.cardBody}>
+			<h2>
+				鴨川デジタル
+				<wbr />
+				相談所
+			</h2>
+			<ul className={styles.cardList}>
+				<Li>
+					<Infobox />
+					京都を中心に活動
+				</Li>
+				<Li>
+					<Checkbox />
+					軽量なサイト作成
+				</Li>
+				<Li>
+					<Checkbox />
+					あらゆるデザインをコーディングします
+				</Li>
+				<Li>
+					<Checkbox />
+					Web・ネイティブ アプリ開発
+				</Li>
+				<Li>
+					<Checkbox />
+					ライブ配信のお手伝い
+				</Li>
+			</ul>
+			<p>幅広く相談お受けします</p>
+		</div>
+	)
+}
+
+function TechInfo() {
+	return (
+		<div className={styles.cardBody}>
+			<h2>あつかう技術</h2>
+			<ul className={styles.cardList}>
+				<Li>
+					<Checkbox />
+					React, Next.js, SvelteをもちいたWebアプリ開発
+				</Li>
+				<Li>
+					<Checkbox />
+					TypeScript で型安全な開発
+				</Li>
+				<Li>
+					<Checkbox />
+					AstroをもちいたWebサイト作成
+				</Li>
+				<Li>
+					<Checkbox />
+					アニメーションも得意
+				</Li>
+				<Li>
+					<Checkbox />
+					React Native, Expo ネイティブアプリ開発
+				</Li>
+				<Li>
+					<Checkbox />
+					Electron を用いたデスクトップアプリ開発
+				</Li>
+			</ul>
+		</div>
+	)
+}
+
+function TechInfoPage2() {
+	return (
+		<div className={styles.cardBody}>
+			<ul className={styles.cardList}>
+				<Li>
+					<Checkbox />
+					WordPressサイトの補修
+				</Li>
+				<Li>
+					<Checkbox />
+					WordPressから使いやすいCMSへ移行サポート
+				</Li>
+				<Li>
+					<Checkbox />
+					Notion など業務効率化のご提案
+				</Li>
+				<Li>
+					<Checkbox />
+					Go, Elm, Raspberry Pi...
+				</Li>
+			</ul>
 		</div>
 	)
 }
@@ -27,54 +148,6 @@ function Houdouji() {
 				</p>
 			</VStack>
 		</>
-	)
-}
-
-function WhatIsKamodigi() {
-	return (
-		<div className={styles.cardBody}>
-			<h2>
-				鴨川デジタル
-				<wbr />
-				相談所
-			</h2>
-			<ul>
-				<li>京都を中心に活動</li>
-				<li>軽量でデザインに凝ったサイト作成</li>
-				<li>Web・ネイティブ アプリ開発</li>
-				<li>ライブ配信のお手伝い</li>
-			</ul>
-			<p>幅広く相談お受けします</p>
-		</div>
-	)
-}
-
-function TechInfo() {
-	return (
-		<div className={styles.cardBody}>
-			<h2>あつかう技術</h2>
-			<ul>
-				<li>React, Next.js, SvelteをもちいたWebアプリ開発</li>
-				<li>TypeScript で型安全な開発</li>
-				<li>AstroをもちいたWebサイト作成</li>
-				<li>アニメーションも得意</li>
-				<li>React Native, Expo ネイティブアプリ開発</li>
-				<li>Electron を用いたデスクトップアプリ開発</li>
-			</ul>
-		</div>
-	)
-}
-
-function TechInfoPage2() {
-	return (
-		<div className={styles.cardBody}>
-			<ul>
-				<li>WordPressサイトの補修</li>
-				<li>WordPressから使いやすいCMSへ移行サポート</li>
-				<li>Notion など業務効率化のご提案</li>
-				<li>Go, Elm, Raspberry Pi...</li>
-			</ul>
-		</div>
 	)
 }
 
@@ -126,7 +199,7 @@ const trans = (r: number, s: number) =>
 
 function Deck() {
 	// The set flags all the cards that are flicked out
-	const [gone, setGone] = useState(() => new Set())
+	const [gone, _setGone] = useState(() => new Set())
 	// Create a bunch of springs using the helpers above
 	const [springs, api] = useSprings(cards.length, (i) => ({
 		...to(i),

@@ -1,3 +1,15 @@
+$breakpoints: (
+	'sm': 'screen and (min-width:480px)',
+	'md': 'screen and (min-width:768px)',
+	'lg': 'screen and (min-width:1024px)',
+);
+
+@mixin mq($breakpoint: sm) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
 .vstack {
 	display: flex;
 	flex-direction: column;
@@ -25,19 +37,48 @@
 
 .houdoujiThumb {
 	width: 100%;
-	height: 300px;
+	height: 250px;
 	margin: 0;
 	background-image: url(/houdouji.jpg);
-	border-radius: 1rem 0;
+	// border-radius: 10% 10% 0 0;
 	background-position: center;
 	background-size: cover;
 	position: relative;
+}
+
+.cardList {
+	list-style-type: none;
+	color: #4a5568;
+
+	> *:not(style) ~ *:not(style) {
+		padding-top: 0.8em;
+	}
+}
+
+.li {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0.6rem;
+	line-height: 1.4em;
+}
+
+.icon {
+	flex-shrink: 0;
 }
 
 .cardBody {
 	width: 100%;
 	height: 100%;
 	padding: 1.25rem 0.75rem;
+	box-sizing: border-box;
+	border-width: 0;
+	padding-left: 1rem;
+	padding-right: 1rem;
+
+	> *:not(style) ~ *:not(style) {
+		padding-top: 1.5rem;
+	}
 }
 
 .card {
@@ -52,19 +93,27 @@
 
 	> div {
 		background-color: white;
-		background-size: auto 85%;
-		background-repeat: no-repeat;
-		background-position: center center;
-		width: 45vh;
-		max-width: 250px;
-		height: 85vh;
-		max-height: 400px;
-		will-change: transform;
+		border-width: 1px;
+		border-style: solid;
+		border-color: #c4c9d0;
 		border-radius: 10px;
 		overflow: hidden;
+		will-change: transform;
 		user-select: none;
 		touch-action: none;
 		box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4),
 			0 10px 10px -10px rgba(50, 50, 73, 0.3);
+
+		width: 280px;
+		height: 480px;
+
+		@include mq(md) {
+			width: 400px;
+			height: 520px;
+
+			@include mq(lg) {
+				height: 570px;
+			}
+		}
 	}
 }

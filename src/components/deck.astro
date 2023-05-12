@@ -1,0 +1,23 @@
+---
+import Deck from '../components/deck'
+---
+
+<section class='full deck-section'>
+	<!-- An React component <Deck> -->
+	<Deck client:visible />
+	<p class='small'>左右にスワイプ</p>
+</section>
+
+<style lang='scss'>
+	.deck-section {
+		width: 100%;
+		height: 110svh;
+		overflow: scroll;
+	}
+
+	.small {
+		font-size: 1.25rem;
+		color: #4a5568;
+		text-align: center;
+	}
+</style>

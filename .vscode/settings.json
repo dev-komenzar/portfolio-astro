@@ -15,10 +15,20 @@
 	],
 	"editor.formatOnSave": true,
 	"prettier.documentSelectors": ["**/*.astro"],
+	"prettier.enable": true,
+	"prettier.enableDebugLogs": false,
 	"[astro]": {
 		"editor.defaultFormatter": "astro-build.astro-vscode"
 	},
-	"[typescriptreact]": {
+	"[typescript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	}
+	},
+	"[typescriptreact]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[scss]": {
+		"editor.defaultFormatter": "stylelint.vscode-stylelint"
+	},
+	"prettier.configPath": ".prettierrc.cjs"
 }

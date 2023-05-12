@@ -68,7 +68,7 @@ module.exports = {
 
 				// If you are using "prettier/prettier" rule,
 				// you don't need to format inside <script> as it will be formatted as a `.astro` file.
-				'prettier/prettier': 'error',
+				// 'prettier/prettier': 'off',
 				'react/jsx-curly-brace-presence': [
 					'warn',
 					{
@@ -90,7 +90,15 @@ module.exports = {
 					version: 'detect',
 				},
 			},
-			rules: {},
+			rules: {
+				'@typescript-eslint/no-unused-vars': [
+					'error',
+					{
+						argsIgnorePattern: '^_',
+						destructuredArrayIgnorePattern: '^_',
+					},
+				],
+			},
 		},
 		{
 			files: ['*.cjs'],
