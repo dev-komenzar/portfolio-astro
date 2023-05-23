@@ -1,0 +1,41 @@
+---
+import { Image } from '@astrojs/image/components'
+import avator from '../assets/avator-640.jpeg'
+---
+
+<section>
+	<Image class='avator' src={avator} alt='プロフィール画像' width={240} />
+	<h2>こめたに・たくや</h2>
+	<a
+		href='http://instagram.com/t_komenzar'
+		target='_blank'
+		rel='noopener noreferrer'>@t_komenzar (instagram)</a
+	>
+	<a href='mailto:takuya.kometan@gmail.com'>メール: takuya.kometan@gmail.com</a>
+	<p>
+		フリーランスエンジニアであり自転車旅人。鴨川デジタル相談所という屋号で京都を中心に活動する。
+	</p>
+	<p>
+		熊野寮での学生生活を経て「ともに生きる空間」を作ることに興味がある。
+		一緒に作っていきましょう。
+	</p>
+	<p>
+		物を見つけたり、捨てられたものを活用する能力が高い。ヒンディー語でいうजुगाड़
+		(jugaad) の精神に富んでいる。
+	</p>
+	<p>
+		世界１２か国を自転車で旅をした。次の目標はユーラシア大陸横断。
+		愛車はチクリ・カツオのツアラー。
+	</p>
+</section>
+
+<style lang='scss'>
+	section {
+		align-items: center;
+		justify-content: center;
+	}
+
+	.avator {
+		border-radius: 50%;
+	}
+</style>
