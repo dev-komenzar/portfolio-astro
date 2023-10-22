@@ -2,21 +2,20 @@
 
 エンジニア こめたに・たくや のポートフォリオ。検証のため`astro`で書いてみた。
 
-## 🚀 Project Structure
+## 🚀 Tech Info
 
-Inside of your Astro project, you'll see the following folders and files:
+### 今回つかった技術のメモ
 
-```
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- Astro
+- Typescript
+- ESLint, Prettier, stylelint: それぞれの astro 対応
+- Husky: コミット時に lint コマンドを走らせる
+- React: スワイプできるカード UI は以前`react-spring`で実装していたものを移植
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### Astro
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+javascript をアウトプットしない方針のフレームワークというのが気になって astro を使った。ポートフォリオとして使ってみて実感できるか検証していく。前のポートフォリオは next.js で書いていたが、静的なページにはオーバースペックだと感じていた。また、WEB アプリとちがって LP やサイト作成ではデザインにこだわる場合がおおく react だとスタイリングが不便なときがあると感じていた。これらの点を astro で解消したい。
 
-Any static assets, like images, can be placed in the `public/` directory.
+### 実際に使ってみて
+
+html を表現するのに JSX をつかう react と違い、astro はほぼ html のような感覚で css を書けるのが快適。コンポーネントごとにスコープがあるので「この css が他に悪さすることないかな」という不安がないのも良い。
