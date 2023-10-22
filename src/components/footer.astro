@@ -1,0 +1,25 @@
+---
+const year = new Date().getFullYear()
+---
+
+<footer>
+	<p>コンテンツ拡充中...</p>
+	<p>&copy; 2020 - {year} 鴨川デジタル相談所</p>
+</footer>
+
+<style lang='scss'>
+	footer {
+		--footer-color: #f7cb44;
+
+		width: 100%;
+		height: auto;
+		padding: 3rem var(--gap) 2rem var(--gap);
+		color: #333;
+		background-color: var(--footer-color);
+		box-shadow: 0 -8px 5px 5px var(--footer-color);
+
+		> * + * {
+			margin-block-start: 2rem;
+		}
+	}
+</style>

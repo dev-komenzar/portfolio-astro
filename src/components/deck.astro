@@ -1,17 +1,17 @@
 ---
-import Deck from '../components/deck'
+import DeckComponent from '../components/deck'
 ---
 
 <section class='full deck-section'>
+	<p class='small'>カードを左右にスワイプ</p>
 	<!-- An React component <Deck> -->
-	<Deck client:visible />
-	<p class='small'>左右にスワイプ</p>
+	<DeckComponent client:visible />
 </section>
 
 <style lang='scss'>
 	.deck-section {
 		width: 100%;
-		height: 110svh;
+		height: auto;
 		overflow: scroll;
 	}
 

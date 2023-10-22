@@ -1,22 +1,31 @@
 ---
 import { Image } from '@astrojs/image/components'
+import { Icon } from 'astro-icon'
 import avator from '../assets/avator-640.jpeg'
 ---
 
 <section>
 	<Image class='avator' src={avator} alt='プロフィール画像' width={240} />
 	<h2>こめたに・たくや</h2>
-	<a
-		href='http://instagram.com/t_komenzar'
-		target='_blank'
-		rel='noopener noreferrer'>@t_komenzar (instagram)</a
-	>
-	<a href='mailto:takuya.kometan@gmail.com'>メール: takuya.kometan@gmail.com</a>
+
+	<div class='icons'>
+		<a
+			class='ig-link'
+			href='http://instagram.com/t_komenzar'
+			target='_blank'
+			rel='noopener noreferrer'
+		>
+			<Icon name='gg:instagram' />
+		</a>
+		<a class='mail' href='mailto:takuya.kometan@gmail.com'>
+			<Icon name='ion:mail-outline' />
+		</a>
+	</div>
 	<p>
 		フリーランスエンジニアであり自転車旅人。鴨川デジタル相談所という屋号で京都を中心に活動する。
 	</p>
 	<p>
-		熊野寮での学生生活を経て「ともに生きる空間」を作ることに興味がある。
+		大学時代の学生寮での学生生活を経て「ともに生きる空間」を作ることに興味がある。
 		一緒に作っていきましょう。
 	</p>
 	<p>
@@ -30,12 +39,55 @@ import avator from '../assets/avator-640.jpeg'
 </section>
 
 <style lang='scss'>
+	section > * + * {
+		margin-block-start: 0.8rem;
+	}
+
+	h2 {
+		grid-column: feature;
+		font-size: 2rem;
+		font-weight: 400;
+		text-align: center;
+		letter-spacing: 0.025em;
+	}
+
 	section {
+		display: flex;
+		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 	}
 
+	.icons {
+		display: grid;
+		grid-template-columns: 100px 100px;
+		align-items: center;
+		justify-items: center;
+	}
+
+	a {
+		color: #ed8936;
+		outline: 2px solid transparent;
+		outline-offset: 2px;
+	}
+
+	.ig-link {
+		width: 50px;
+		height: 50px;
+	}
+
+	.mail {
+		width: 50px;
+		height: 50px;
+	}
+
 	.avator {
 		border-radius: 50%;
+	}
+
+	p {
+		grid-column: content;
+		line-height: 2;
+		color: #4a5568;
 	}
 </style>
