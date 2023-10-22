@@ -10,6 +10,7 @@ module.exports = {
 		ecmaVersion: 'latest',
 		parser: '@typescript-eslint/parser',
 	},
+	ignorePatterns: ['**/dist/*.js'],
 	rules: {
 		'react/jsx-curly-brace-presence': [
 			'warn',
