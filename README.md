@@ -1,6 +1,6 @@
 # Portfolio
 
-エンジニア komenzar のポートフォリオ
+エンジニア こめたに・たくや のポートフォリオ。検証のため`astro`で書いてみた。
 
 ## 🚀 Project Structure
 
