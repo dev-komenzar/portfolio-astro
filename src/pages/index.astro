@@ -75,14 +75,29 @@ import MyProfile from '../components/my-profile.astro'
 				--content: min(50ch, 100% - var(--gap) * 2);
 				--popout: minmax(0, 2rem);
 				--feature: minmax(0, 5rem);
+
+				// Background css gradient
+				background: linear-gradient(60deg, #ffca3f, #77e3f6);
+				background-size: 400% 400%;
+				animation: gradient-background 10s ease infinite;
+			}
+
+			@keyframes gradient-background {
+				0% {
+					background-position: 0% 50%;
+				}
+
+				50% {
+					background-position: 100% 50%;
+				}
+
+				100% {
+					background-position: 0% 50%;
+				}
 			}
 
 			main {
 				padding-bottom: 6rem;
-				background-image: url('/mesh-gradient.png');
-				background-repeat: no-repeat;
-				background-position: center;
-				background-size: cover;
 			}
 
 			h1,
