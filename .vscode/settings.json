@@ -1,9 +1,8 @@
 {
 	"editor.codeActionsOnSave": {
-		"source.fixAll.eslint": true
+		"source.fixAll.eslint": "explicit"
 	},
 	"eslint.format.enable": false,
-	"eslint.packageManager": "pnpm",
 	"files.insertFinalNewline": true,
 	"npm.packageManager": "pnpm",
 	"eslint.validate": [

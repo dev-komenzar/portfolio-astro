@@ -7,4 +7,5 @@ module.exports = {
 		'selector-pseudo-element-colon-notation': 'double',
 	},
 	customSyntax: 'postcss-html',
+	ignoreFiles: ['**/*.json'],
 }
