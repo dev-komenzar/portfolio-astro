@@ -1,7 +1,8 @@
 import { Icon } from '@iconify/react'
 import { animated, to as interpolate, useSprings } from '@react-spring/web'
 import { useDrag } from '@use-gesture/react'
-import { Children, ReactNode, useState } from 'react'
+import type { ReactNode } from 'react'
+import { Children, useState } from 'react'
 import styles from './deck.module.scss'
 
 // todo: VStackコンポーネントを作る

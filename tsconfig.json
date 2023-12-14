@@ -1,7 +1,7 @@
 {
 	"extends": "astro/tsconfigs/strict",
 	"compilerOptions": {
-		"types": ["@astrojs/image/client"],
+		"types": [],
 		"jsx": "react-jsx",
 		"jsxImportSource": "react"
 	}

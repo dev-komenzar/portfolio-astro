@@ -1,18 +1,10 @@
 ---
-import { Picture } from '@astrojs/image/components'
+import { Image } from 'astro:assets'
 import Kamogawa from '../assets/kamogawa.jpg'
 ---
 
 <section id='hero-top' class='feature'>
-	<Picture
-		class='pic'
-		src={Kamogawa}
-		alt='夕暮れの鴨川'
-		sizes='(max-width: 480px) 300px, ((min-width:480px) and (max-width: 1280px)) 480px, (min-width: 1280px) 1280px'
-		widths={[400, 800, 1280]}
-		aspectRatio='1280:854'
-		position='center'
-	/>
+	<Image class='pic' src={Kamogawa} alt='夕暮れの鴨川' height={400} />
 </section>
 
 <script>
@@ -27,6 +19,7 @@ import Kamogawa from '../assets/kamogawa.jpg'
 	.pic {
 		width: 100%;
 		border-radius: 0;
+		object-fit: cover;
 	}
 
 	@media screen and (min-width: 480px) {
