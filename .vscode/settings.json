@@ -1,6 +1,6 @@
 {
 	"editor.codeActionsOnSave": {
-		"source.fixAll.eslint": "explicit"
+		"source.fixAll": "always"
 	},
 	"eslint.format.enable": false,
 	"files.insertFinalNewline": true,
@@ -17,7 +17,7 @@
 	"prettier.enable": true,
 	"prettier.enableDebugLogs": false,
 	"[astro]": {
-		"editor.defaultFormatter": "astro-build.astro-vscode"
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[typescript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -29,5 +29,12 @@
 	"[scss]": {
 		"editor.defaultFormatter": "stylelint.vscode-stylelint"
 	},
-	"prettier.configPath": ".prettierrc.cjs"
+	"prettier.configPath": ".prettierrc.cjs",
+	"astro.trace.server": "messages",
+	"stylelint.configFile": "./stylelint.config.cjs",
+	"stylelint.packageManager": "pnpm",
+	"css.validate": false,
+	"less.validate": false,
+	"scss.validate": false,
+	"stylelint.validate": ["css", "less", "postcss", "astro"]
 }
