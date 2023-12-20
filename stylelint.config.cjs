@@ -1,6 +1,10 @@
 module.exports = {
 	plugins: ['stylelint-scss', 'stylelint-prettier'],
-	extends: ['stylelint-config-standard-scss', 'stylelint-config-recess-order'],
+	extends: [
+		'stylelint-config-standard-scss',
+		'stylelint-config-recess-order',
+		'stylelint-config-html',
+	],
 	rules: {
 		'at-rule-no-unknown': null,
 		'scss/at-rule-no-unknown': [

@@ -27,7 +27,7 @@
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[scss]": {
-		"editor.defaultFormatter": "stylelint.vscode-stylelint"
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"prettier.configPath": ".prettierrc.cjs",
 	"astro.trace.server": "messages",
@@ -36,5 +36,5 @@
 	"css.validate": false,
 	"less.validate": false,
 	"scss.validate": false,
-	"stylelint.validate": ["css", "less", "postcss", "astro"]
+	"stylelint.validate": ["css", "less", "postcss", "astro", "svelte"]
 }

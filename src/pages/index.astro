@@ -10,7 +10,7 @@ import Layout from '@layouts/layout.astro'
 	description='鴨川デジタル相談所は、京都・亀岡を中心に活動するIT全般のお仕事をうけたまわります。サイト作成、Webアプリ作成、ストレスなく業務を進めるためのツールの導入など。'
 >
 	<main>
-		<article class='container' role='article'>
+		<article class='multi-width' role='article'>
 			<Intro />
 			<Hero />
 			<Deck />
@@ -18,3 +18,10 @@ import Layout from '@layouts/layout.astro'
 		</article>
 	</main>
 </Layout>
+
+<style>
+	main {
+		margin-top: 2rem;
+		margin-bottom: 3rem;
+	}
+</style>
