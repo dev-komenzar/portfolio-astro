@@ -2,12 +2,14 @@
 	const appsArr = ['App 1', 'App 2', 'App 3']
 </script>
 
-<a href="/">
-	<h2 class="logo-text">鴨川デジタル相談所</h2>
-</a>
+<h2 class="logo-text">
+	<a href="/"> 鴨川デジタル相談所 </a>
+</h2>
 <div class="list">
 	<div class="item">制作事例</div>
-	<a href="/prices"> <div class="item">料金・見積もり</div></a>
+	<div class="item">
+		<a href="/about"> 鴨川デジタル相談所について</a>
+	</div>
 </div>
 <a href="/lab"><h3 class="menu-header">ミニアプリ</h3></a>
 <div class="list">
@@ -19,11 +21,15 @@
 </div>
 
 <style lang="scss">
-	.item {
-		@apply relative flex h-6  min-h-[24px] items-center rounded-sm pl-6 pr-1 text-base;
+	%item {
+		@apply relative flex h-6  min-h-[24px] items-center rounded-sm text-base;
 		@apply z-20 text-magnum-900 outline-none ring-0;
-		@apply data-[highlighted]:bg-magnum-200 data-[highlighted]:text-magnum-900;
 		@apply select-none leading-none;
+	}
+
+	.item {
+		@extend %item;
+		@apply pl-6 pr-1;
 	}
 
 	.logo-text {

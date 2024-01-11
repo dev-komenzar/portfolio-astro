@@ -54,7 +54,7 @@
 
 	.menu-container {
 		@apply fixed bottom-0 z-50 h-auto w-full rounded-xl rounded-b-none bg-neutral-100 px-4
-				 pt-8 shadow-lg focus:outline-none md:hidden;
+				 pt-12 shadow-lg focus:outline-none md:hidden;
 
 		margin-bottom: 1px;
 	}

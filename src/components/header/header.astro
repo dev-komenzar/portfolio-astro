@@ -7,7 +7,15 @@ import Button from './button.svelte'
 		<a href='/'>
 			<h2 class='logo-text'>鴨川デジタル相談所</h2>
 		</a>
-		<Button client:load />
+
+		<nav class='nav'>
+			<div class='hidden space-x-8 md:flex'>
+				<a href=''>AAA</a><a href=''>BBB</a><a href=''>CCCC</a>
+			</div>
+			<div class='md:hidden'>
+				<Button />
+			</div>
+		</nav>
 	</div>
 </header>
 
@@ -23,7 +31,7 @@ import Button from './button.svelte'
 	}
 
 	.header-container {
-		@apply box-border flex items-center justify-between rounded-md bg-neutral-50 px-2 py-2 outline outline-1 outline-neutral-100;
+		@apply mx-4 box-border flex items-center justify-between rounded-md bg-neutral-50 px-2 py-2 outline outline-1 outline-neutral-100;
 		@apply md:bg-transparent md:px-0 md:outline-none;
 	}
 
@@ -31,7 +39,10 @@ import Button from './button.svelte'
 		font-size: 1.25rem;
 		font-weight: 500;
 		line-height: 1.75rem;
-		color: #4a5568;
 		letter-spacing: 0.05em;
+	}
+
+	.nav {
+		@apply flex items-center gap-6 text-sm font-semibold leading-6;
 	}
 </style>
