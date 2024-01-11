@@ -1,17 +1,17 @@
 ---
-import DeckComponent from '@components/deck'
+import DeckComponent from '@components/deck/index.tsx'
+import '@fontsource/dotgothic16'
 ---
 
 <section class='full deck-section'>
-	<p class='small'>カードを左右にスワイプ</p>
-	<!-- An React component <Deck> -->
-	<DeckComponent client:visible />
+	<DeckComponent client:load />
 </section>
 
 <style lang='scss'>
 	.deck-section {
 		width: 100%;
-		height: auto;
+		height: 100lvh;
+		min-height: 800px;
 		overflow: scroll;
 	}
 

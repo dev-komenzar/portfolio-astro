@@ -27,7 +27,7 @@ $breakpoints: (
 		auto;
 	display: flex;
 	align-items: center;
-	height: 125svh;
+	height: 100svh;
 	max-height: 700px;
 	width: 100%;
 	max-width: 100vw;
@@ -93,6 +93,7 @@ $breakpoints: (
 	justify-content: center;
 	touch-action: none;
 
+	// This is card itself
 	> div {
 		background-color: white;
 		border-width: 1px;
@@ -103,12 +104,12 @@ $breakpoints: (
 		will-change: transform;
 		user-select: none;
 		touch-action: none;
+		// box-shadow examples: https://getcssscan.com/css-box-shadow-examples
 		box-shadow:
-			0 12.5px 50px -10px rgba(50, 50, 73, 0.4),
-			0 10px 10px -10px rgba(50, 50, 73, 0.3);
-
-		width: 280px;
-		height: 480px;
+			rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+			rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+		width: 200px;
+		height: 380px;
 
 		@include mq(md) {
 			width: 400px;
@@ -118,5 +119,15 @@ $breakpoints: (
 				height: 570px;
 			}
 		}
+	}
+}
+
+.dotFont {
+	font-family: 'DotGothic16', sans-serif;
+	font-size: 50px;
+	line-height: 1.5em;
+
+	.middle {
+		font-size: 40px;
 	}
 }
