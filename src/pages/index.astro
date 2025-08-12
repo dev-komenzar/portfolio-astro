@@ -1,148 +1,27 @@
 ---
-import { SEO } from 'astro-seo'
-import Deck from '../components/deck.astro'
-import Footer from '../components/footer.astro'
-import Header from '../components/header.astro'
-import Hero from '../components/hero.astro'
-import Intro from '../components/intro.astro'
-import MyProfile from '../components/my-profile.astro'
+import Deck from '@components/deck.astro'
+import Hero from '@components/hero.astro'
+import Intro from '@components/intro.astro'
+import MyProfile from '@components/my-profile.astro'
+import Layout from '@layouts/layout.astro'
 ---
 
-<html lang='ja'>
-	<head>
-		<SEO
-			title='鴨川デジタル相談所'
-			titleDefault='鴨川デジタル相談所'
-			description='鴨川デジタル相談所は、京都・亀岡を中心に活動するIT全般のお仕事をうけたまわります。サイト作成、Webアプリ作成、ストレスなく業務を進めるためのツールの導入など。'
-			canonical='kamodigi.vercel.app'
-		/>
-		<meta charset='utf-8' />
-		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-		<link
-			rel='stylesheet'
-			href='https://cdn.jsdelivr.net/npm/ress@4.0.0/dist/ress.min.css'
-		/>
-		<meta name='viewport' content='width=device-width' />
-		<meta name='generator' content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body ontouchstart=''>
-		<Header />
-		<main>
-			<article class='container' role='article'>
-				<Intro />
-				<Hero />
-				<Deck />
-				<MyProfile />
-			</article>
-		</main>
+<Layout
+	description='鴨川デジタル相談所は、京都・亀岡を中心に活動するIT全般のお仕事をうけたまわります。サイト作成、Webアプリ作成、ストレスなく業務を進めるためのツールの導入など。'
+>
+	<main>
+		<article class='multi-width' role='article'>
+			<Intro />
+			<Hero />
+			<Deck />
+			<MyProfile />
+		</article>
+	</main>
+</Layout>
 
-		<Footer />
-
-		<style lang='scss' is:global>
-			@mixin cjk {
-				// Chinese-Japanese-Koreanできれいに改行する
-				word-break: keep-all;
-				overflow-wrap: anywhere;
-			}
-
-			// 今は使っていない
-			// レスポンシブをSCSSで使いまわすっ記述方法
-			$breakpoints: (
-				'sm': 'screen and (min-width:480px)',
-				'md': 'screen and (min-width:768px)',
-				'lg': 'screen and (min-width:1024px)',
-			);
-
-			@mixin mq($breakpoint: sm) {
-				@media #{map-get($breakpoints, $breakpoint)} {
-					@content;
-				}
-			}
-
-			body {
-				margin: 0;
-				font-family: 'TsukuGoPr5-M', YuGothic, -apple-system, BlinkMacSystemFont,
-					'Segoe UI', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-					'Segoe UI Symbol';
-
-				// width: 100%;
-				@include cjk;
-
-				// Define variables for <main>
-				--gap: clamp(1rem, 6vw, 3rem);
-				--full: minmax(var(--gap), 1fr);
-				--content: min(50ch, 100% - var(--gap) * 2);
-				--popout: minmax(0, 2rem);
-				--feature: minmax(0, 5rem);
-
-				// Background css gradient
-				background: linear-gradient(60deg, #ffca3f, #77e3f6);
-				background-size: 400% 400%;
-				animation: gradient-background 10s ease infinite;
-			}
-
-			@keyframes gradient-background {
-				0% {
-					background-position: 0% 50%;
-				}
-
-				50% {
-					background-position: 100% 50%;
-				}
-
-				100% {
-					background-position: 0% 50%;
-				}
-			}
-
-			main {
-				padding-bottom: 6rem;
-			}
-
-			h1,
-			h2,
-			h3,
-			h4,
-			h5,
-			h6 {
-				font-family: 'TsuGoPr5R-SyntaxNextLTProL', YuGothic, -apple-system,
-					BlinkMacSystemFont, 'Segoe UI', sans-serif, 'Apple Color Emoji',
-					'Segoe UI Emoji', 'Segoe UI Symbol';
-			}
-
-			p {
-				color: #4a5568;
-			}
-
-			.container {
-				display: grid;
-				grid-template-columns:
-					[full-start] var(--full)
-					[feature-start] var(--feature)
-					[popout-start] var(--popout)
-					[content-start] var(--content) [content-end]
-					var(--popout) [popout-end]
-					var(--feature) [feature-end]
-					var(--full) [full-end];
-				row-gap: 5rem;
-
-				> * {
-					grid-column: content;
-				}
-
-				.popout {
-					grid-column: popout;
-				}
-
-				.feature {
-					grid-column: feature;
-				}
-
-				.full {
-					grid-column: full;
-				}
-			}
-		</style>
-	</body>
-</html>
+<style>
+	main {
+		margin-top: 2rem;
+		margin-bottom: 3rem;
+	}
+</style>

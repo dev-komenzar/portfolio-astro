@@ -1,0 +1,140 @@
+---
+import Header from '@components/header/header.astro'
+import { SEO } from 'astro-seo'
+
+const { title, description } = Astro.props
+---
+
+<html lang='ja'>
+	<head>
+		<SEO
+			titleTemplate='%s — 鴨川デジタル相談所'
+			titleDefault='鴨川デジタル相談所'
+			title={title}
+			description={description}
+		/>
+		<meta charset='utf-8' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<meta name='viewport' content='width=device-width' />
+		<meta name='generator' content={Astro.generator} />
+	</head>
+	<body ontouchstart=''>
+		<slot />
+		<Header />
+
+		<style lang='scss' is:global>
+			@mixin cjk {
+				// Chinese-Japanese-Koreanできれいに改行する
+				word-break: keep-all;
+				overflow-wrap: anywhere;
+			}
+
+			@keyframes gradient-background {
+				0% {
+					background-position: 0% 50%;
+				}
+
+				50% {
+					background-position: 100% 50%;
+				}
+
+				100% {
+					background-position: 0% 50%;
+				}
+			}
+
+			body {
+				@apply relative flex flex-col md:flex-col-reverse;
+
+				min-height: 100lvh;
+				margin: 0;
+				font-family:
+					'TsukuGoPr5-M',
+					YuGothic,
+					-apple-system,
+					BlinkMacSystemFont,
+					'Segoe UI',
+					sans-serif,
+					'Apple Color Emoji',
+					'Segoe UI Emoji',
+					'Segoe UI Symbol';
+
+				@include cjk;
+
+				// Define variables for <main>
+				--gap: clamp(1rem, 6vw, 3rem);
+				--full: minmax(var(--gap), 1fr);
+				--content: min(50ch, 100% - var(--gap) * 2);
+				--popout: minmax(0, 2rem);
+				--feature: minmax(0, 5rem);
+			}
+
+			body::before {
+				position: fixed;
+				top: 0;
+				left: 0%;
+				z-index: -1;
+				display: block;
+				width: 100%;
+				height: 100lvh;
+				content: '';
+
+				// Background css gradient
+				background-image: linear-gradient(60deg, #ffca3f, #77e3f6);
+				background-size: 400% 400%;
+				animation: gradient-background 4s ease infinite;
+			}
+
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				font-family:
+					'TsuGoPr5R-SyntaxNextLTProL',
+					YuGothic,
+					-apple-system,
+					BlinkMacSystemFont,
+					'Segoe UI',
+					sans-serif,
+					'Apple Color Emoji',
+					'Segoe UI Emoji',
+					'Segoe UI Symbol';
+			}
+
+			p {
+				color: #4a5568;
+			}
+
+			.multi-width {
+				display: grid;
+				grid-template-columns:
+					[full-start] var(--full)
+					[feature-start] var(--feature)
+					[popout-start] var(--popout)
+					[content-start] var(--content) [content-end]
+					var(--popout) [popout-end]
+					var(--feature) [feature-end]
+					var(--full) [full-end];
+				row-gap: 5rem;
+
+				> * {
+					grid-column: content;
+				}
+
+				.popout {
+					grid-column: popout;
+				}
+
+				.feature {
+					grid-column: feature;
+				}
+
+				.full {
+					grid-column: full;
+				}
+			}
+		</style>
+	</body>
+</html>
