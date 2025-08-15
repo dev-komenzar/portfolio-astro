@@ -2,6 +2,10 @@
 	"name": "far-field",
 	"type": "module",
 	"version": "0.0.1",
+	"packageManager": "pnpm@10.12.4",
+	"engines": {
+		"node": "22.x"
+	},
 	"scripts": {
 		"lint": "pnpm run format && pnpm run lint:es && pnpm run lint:style",
 		"format": "pnpm prettier --write --plugin-search-dir=. .",
