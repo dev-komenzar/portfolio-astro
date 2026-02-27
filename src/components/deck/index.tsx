@@ -16,7 +16,7 @@ const to = (i: number) => ({
 	delay: i * 100,
 })
 
-const from = (_i: number) => ({
+const from = () => ({
 	x: 0,
 	rot: 0,
 	scale: 1.2,
@@ -33,11 +33,11 @@ const trans = (r: number, s: number) =>
 
 function Deck() {
 	// The set flags all the cards that are flicked out
-	const [gone, _setGone] = useState(() => new Set())
+	const [gone] = useState(() => new Set())
 	// Create a bunch of springs using the helpers above
 	const [springs, api] = useSprings(cards.length, (i) => ({
 		...to(i),
-		from: from(i),
+		from: from(),
 	}))
 	// Create a gesture, we're interested in down-state,
 	// delta (current-pos - click-pos), direction and velocity
